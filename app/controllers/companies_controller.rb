@@ -62,12 +62,13 @@ class CompaniesController < ApplicationController
   end
 
   def default_login
-    if current_user.companies.empty?
-      redirect_to home_path
-    else
-      session[:current_company_id] = current_user.companies.first.id
-      redirect_to company_path(session[:current_company_id])
-    end
+    redirect_to home_path
+    # if current_user.companies.empty?
+    #   redirect_to home_path
+    # else
+    #   session[:current_company_id] = current_user.companies.first.id
+    #   redirect_to company_path(session[:current_company_id])
+    # end
   end
 
   private

@@ -49,15 +49,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                          <% current_user.company_users.each do |company_user| %>
-                          <tr class="gradeX">
-                            <td> <%= company_user.company.company_name %> </td>
-                            <td> <%= company_user.company.cnpj %> </td>
-                            <td> <%= company_user.user.email %> </td>
-                            <td> <%= company_user.company.report_system %> </td>
-                            <td> <%= company_user.company.created_at %> </td>
-                          </tr>
-                          <% end %>
+
 
                     </table>
                 </div>
