@@ -1,9 +1,9 @@
 <div class="middle-box text-center loginscreen animated fadeInDown">
-      <%= image_tag "InvoO-logo.png", class: "logo-name", style: "width: 200px"%>
+      <%#= image_tag "InvoO-logo.png", class: "logo-name", style: "width: 200px"%>
           <h1 class="logo-name"></h1>
-            <h3>InvoO</h3>
+            <!-- <h3>InvoO</h3> -->
                     <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
-              <p>Enviar instruções para redefinir senha</p>
+              <h3>Enviar instruções para redefinir senha</h3>
 
               <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
