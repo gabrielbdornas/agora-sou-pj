@@ -16,7 +16,7 @@
                       </li>
                     <% else %>
                       <li>
-                        <%= link_to 'Home', default_login_path, class: 'nav-link page-scroll' %>
+                        <%= link_to 'Home', home_path, class: 'nav-link page-scroll' %>
                       </li>
                     <% end %>
 
@@ -28,7 +28,7 @@
                     <% if user_signed_in? %>
                       <li> <%= link_to 'Login', home_path, class: 'nav-link page-scroll' %> </li>
                     <% else %>
-                      <li> <%= link_to 'Login', default_login_path, class: 'nav-link page-scroll' %> </li>
+                      <li> <%= link_to 'Login', home_path, class: 'nav-link page-scroll' %> </li>
                     <% end %>
 
                 </ul>

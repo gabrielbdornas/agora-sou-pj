@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#landing'
   get 'home', to: 'pages#home'
-  get 'exceptions', to: 'pages#exceptions'
-  get 'from-to', to: 'pages#from_to'
-  get 'balancete', to: 'pages#balancete'
-  get 'balanco-patrimonial', to: 'pages#balance_sheet'
-  get 'default_login', to: 'companies#default_login'
-  get 'teste', to: 'import_account#teste'
+  # get 'exceptions', to: 'pages#exceptions'
+  # get 'from-to', to: 'pages#from_to'
+  # get 'balancete', to: 'pages#balancete'
+  # get 'balanco-patrimonial', to: 'pages#balance_sheet'
+  # get 'default_login', to: 'companies#default_login'
+  # get 'teste', to: 'import_account#teste'
 
   resources :companies
 

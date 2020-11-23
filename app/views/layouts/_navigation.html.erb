@@ -22,19 +22,46 @@
           </ul>
         </div>
       </li>
-      <% if current_user.email.nil? %>
-        <li class="<%= 'active' if current_page?('companies/new') %>">
-          <%= link_to new_company_path do %>
-            <i class="fa fa-briefcase"></i> <span class="nav-label">Cadastrar Empresa</span>
-          <% end %>
-        </li>
-      <% else %>
         <li class="<%= 'active' if current_page?('/companies/:id') %>">
-            <%= link_to link_to new_company_path do %>
+            <%= link_to home_path do %>
             <i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span>
             <% end %>
         </li>
-        <li class="<%= 'active' if current_page?('companies/new') %>">
+        <li>
+          <a href="#"><i class="fa fa-briefcase"></i> <span class="nav-label" data-i18n="nav.menulevels">Cadastro</span><span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <%= link_to 'Empresa', home_path %>
+            </li>
+            <li>
+              <%= link_to 'Clientes / Fornecedores', home_path %>
+            </li>
+            <li>
+              <%= link_to 'Plano de Contas', home_path %>
+            </li>
+            <li>
+              <%= link_to 'Contas Bancárias', home_path %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-money"></i> <span class="nav-label" data-i18n="nav.menulevels">Financeiro</span><span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <%= link_to 'Contas a Pagar', home_path %>
+            </li>
+            <li>
+              <%= link_to 'Contas a Receber', home_path %>
+            </li>
+            <li>
+              <%= link_to 'Importar OFX', home_path %>
+            </li>
+            <li>
+              <%= link_to 'Contas Bancárias', home_path %>
+            </li>
+          </ul>
+        </li>
+        <!-- <li class="<%= 'active' if current_page?('companies/new') %>">
             <%= link_to new_company_path do %>
             <i class="fa fa-briefcase"></i> <span class="nav-label">Cadastrar Empresa</span>
             <% end %>
@@ -80,28 +107,14 @@
                   </li>
                 </ul>
               </li>
-              <!-- <li>
-                <a href="#">Fluxo de Caixa <span class="fa arrow"></span></a>
-                <ul class="nav nav-third-level">
-                  <li>
-                      <a href="#">Tabela</a>
-                  </li>
-                  <li>
-                      <a href="#">Gráficos</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <%= link_to 'Balancete', balancete_path %>
-              </li> -->
             </ul>
         </li>
         <li class="<%= 'active' if current_page?('/companies/:id/orders') %>">
           <%= link_to new_company_path do %>
             <i class="fa fa-money"></i> <span class="nav-label">Pagamento e Faturas</span>
           <% end %>
-        </li>
-      <% end %>
+        </li>-->
+
     </ul>
   </div>
 </nav>
