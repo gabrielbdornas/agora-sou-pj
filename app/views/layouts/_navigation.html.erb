@@ -17,8 +17,13 @@
           </a>
           <ul class="dropdown-menu animated fadeInRight m-t-xs">
               <li>
-                <%= link_to current_user.email %>
+                <%= link_to "Cadastrar empresa", new_company_path %>
               </li>
+              <% current_user.companies.each do |company| %>
+                <li>
+                  <%= link_to company.formal_name, home_path %>
+                </li>
+              <% end %>
           </ul>
         </div>
       </li>

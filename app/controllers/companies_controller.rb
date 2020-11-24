@@ -9,20 +9,19 @@ class CompaniesController < ApplicationController
 
   def new
     @company = Company.new
-    @companies = Company.all
   end
 
   def create
     @company = Company.new(company_params)
     if @company.save
-      @company_user = CompanyUser.create(user_id: current_user.id, company_id: @company.id)
-      @order = Order.create!(company: @company, user: current_user)
+      @company_user = CompanyUser.create(user: current_user, company: @company)
       session[:current_company_id] = @company.id
       # redirect_to import_company_import_accounts_path(session[:current_company_id]),
-      redirect_to new_company_import_account_path(session[:current_company_id]),
-      notice: 'Empresa cadastrada com sucesso. Realize a importação do arquivo .CSV para
-              alimentar as demonstrações financeiras e dashboards'
+      # redirect_to new_company_import_account_path(session[:current_company_id]),
+      redirect_to company_path(@company),
+      notice: 'Empresa cadastrada com sucesso'
     else
+      raise
       render :new
     end
   end
@@ -78,6 +77,6 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:company_name, :company_email, :cnpj, :report_system, :zipcode, :address, :number, :complement, :district, :state, :city)
+    params.require(:company).permit(:cnpj, :formal_name, :fantasy_name)
   end
 end
