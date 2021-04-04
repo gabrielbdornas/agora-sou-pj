@@ -21,7 +21,7 @@ class CompaniesController < ApplicationController
       redirect_to company_path(@company),
       notice: 'Empresa cadastrada com sucesso'
     else
-      raise
+      # raise
       render :new
     end
   end
